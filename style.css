@@ -1,3 +1,7 @@
+/*==========================
+INICIO CSS GERAL
+==========================*/
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +15,6 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
     color: #111827;
 }
 
@@ -73,15 +76,11 @@ p {
     color: #1f2937;
 }
 
-
-body.dark{
-    background-color: #3b3d3f;
-}
-
 a:hover {
     transform: scale(1.1);
-    transition: transform 1.0s ease;
-    transition: text-shadow 1s ease;
+    transition: transform .4s ease,
+    background-color .4 ease,
+    color .4s ease;
     background-color:rgba(128, 128, 128, 0.219);
 }
 
@@ -106,10 +105,12 @@ a:hover {
     background-color: #08457e;
 }
 
+/*==============================
+BOTÃO TEMA CLARO E TEMA ESCURO*/
 .trilho {
     width: 120px;
     height: 38px;
-    background-color: #eeeeee;
+    background-color: #393a3a;
     z-index: 101;
     border-radius: 150px;
     display: flex;
@@ -134,21 +135,20 @@ a:hover {
     border: 2px solid rgb(128, 128, 128);
 }
 
-.indicador .imagemLua{
+.indicador .imagemSol{
     width: 30px;
 }
 
-.trilho.dark .indicador{
-    left: calc(100% - 42px);
+/*==============================
+FIM BOTÃO TEMA CLARO E TEMA ESCURO*/
 
-}
 #sobremim {
     padding: 0 10vw;
 }
 
 .apresentation {
     display: flex;
-    padding: 0 10vw
+    padding: 0 5vw
 }
 
 #ola1 {
@@ -180,6 +180,80 @@ a:hover {
     top: calc(100% - 109px);
     left: 50px;
 }
+ /*===================
+Parte código
+ =====================*/
+
+.code-card{
+    width: 100vw;
+    height: 100%;
+    background:#1e1e1e;
+    border-radius:12px;
+    box-shadow:
+    0 0 20px rgba(37,99,235,.15),
+    0 20px 50px rgba(24, 23, 23, 0.25);
+    overflow:visible;
+    margin: 5rem;
+}
+
+.code-header{
+    height:45px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 20px;
+    background:#2d2d2d;
+}
+
+.red,
+.yellow,
+.green{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.red{
+    background:#ff5f56;
+}
+
+.yellow{
+    background:#ffbd2e;
+}
+
+.green{
+    background:#27c93f;
+}
+
+.code-card pre{
+    margin:0;
+    padding:25px;
+    color:#d4d4d4;
+    font-size:14px;
+    line-height:1.2;
+    font-family:Consolas, monospace;
+
+}
+
+.keyword{
+    color:#569CD6;
+}
+
+.variable{
+    color:#9CDCFE;
+}
+
+.property{
+    color:#4FC1FF;
+}
+
+.string{
+    color:#CE9178;
+}
+
+  /*===================
+Fim parte código
+ =====================*/
 
 .linhaAbaixoFrontend{
     color: #121214;
@@ -187,14 +261,6 @@ a:hover {
 } 
 
 #cargo {
-    color: #000000;
-    font-family: Poppins, sans-serif;
-    font-size: 100px;
-    align-self: flex-start;
-
-}
-
-#cargo1 {
     color: #000000;
     font-family: Poppins, sans-serif;
     font-size: 100px;
@@ -216,6 +282,7 @@ a:hover {
     flex-direction: column;
     font-family:poppins, sans-serif;    
     letter-spacing: 3%;
+    margin-bottom: 10vh;
 }   
 
 .tituloSkills {
@@ -240,14 +307,10 @@ a:hover {
     border-radius: 10px;
 }
 
-/* Garantir que as skills fiquem acima dos projetos utilziando o z-index positivo 2 */
-.caixaSkills {
-    position: relative;
-    z-index: 2;
-}
-
 /* Efeito de hover para mostrar texto em cima da imagem dentro da caixa */
-.htmlLogo, .cssLogo, .jsLogo {
+.htmlLogo,
+.cssLogo,
+.jsLogo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,7 +326,9 @@ a:hover {
 
 }
 
-.htmlLogo span, .cssLogo span, .jsLogo span {
+.htmlLogo span,
+.cssLogo span,
+.jsLogo span {
     font-size: 24px;
     font-weight: bold;
     color: #000000;
@@ -273,13 +338,17 @@ a:hover {
     font-family: Poppins, sans-serif;
 }
 
-.htmlLogo:hover span, .cssLogo:hover span , .jsLogo:hover span {
+.htmlLogo:hover span,
+.cssLogo:hover span,
+.jsLogo:hover span {
     opacity: 1;
 }
  /* Efeito de hover para mostrar texto em cima da imagem dentro da caixa */
 
  /* Efeito de hover para aumentar escala da habilidade e escurecer um pouco a sombra dda caixa*/
-.htmlLogo:hover , .cssLogo:hover , .jsLogo:hover{
+.htmlLogo:hover,
+ .cssLogo:hover,
+.jsLogo:hover{
     transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(0,0,0,.15);
 
@@ -290,7 +359,9 @@ a:hover {
     display: flex;
     opacity: 0;
 }
-.htmlLogo:hover > .estrelas , .cssLogo:hover > .estrelas , .jsLogo:hover > .estrelas {
+.htmlLogo:hover > .estrelas,
+.cssLogo:hover > .estrelas,
+.jsLogo:hover > .estrelas {
     opacity: 1;
     transition: transform 1.5s ease;
 }
@@ -300,10 +371,9 @@ a:hover {
 }
 
 .tituloProjetos {
-    display: flex ;
     justify-content: center;
-    color: #fff;
-    margin-top: 15vw;
+    align-items: center;
+    color: #ffffff;
     font-size: 40px;
     font-family: Poppins, sans-serif;
     
@@ -311,18 +381,23 @@ a:hover {
 
 .meusProjetos {
     width: 100%;
-    height: 800px;
+    min-height: 100vh;
     font-size: 24px;
     background: linear-gradient(180deg,#0b569c,#083d70);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 4rem;
+    margin-top: 5rem;
 }
+.listaProjetos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
 
-.cardProjeto {
-    cursor: pointer;
-    transition: 1.5s ease;
 }
 
 /* Hover para ambos os cards de projeto */
@@ -333,13 +408,18 @@ a:hover {
 }
 
 .cardProjeto{
-     background-color: #ffffff;
+    width: 100%;
+    gap: 40px;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     width: 350px;
-    justify-items: center;
     border: 4px solid #353333;
     border-radius: 8px;
+    cursor: pointer;
+    transition: 1.5s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .cardProjeto h4{
@@ -373,7 +453,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #121214;
+    background-color: #f5f7fa;
     height: 200px;
 }
 
@@ -382,6 +462,78 @@ a:hover {
     gap: 10px;
 }
 
+/*==========================
+FIM CSS GERAL
+==========================*/
 
 
+/*==========================
+TEMA ESCURO
+==========================*/
+body.dark{
+    background-color: #1E1E1E;
+}
 
+body.dark .trilho .indicador{
+    left: calc(100% - 42px);
+
+}
+
+body.dark .trilho{
+    background-color: #bdbdbd;
+}
+
+body.dark .menu{
+    background-color: #1E1E1E;
+    color: #ffffff;
+
+}
+body.dark .menu a{
+    color: #ffffff;
+
+}
+
+body.dark #ola1 {
+    color: #ffffff;
+}
+
+body.dark #cargo,
+#cargo1{
+    color: #ffffff;
+}
+
+body.dark .linhaAbaixoFrontend{
+    border-color: #ffffff;
+}
+
+body.dark .textoApresentacao{
+    color: white;
+}
+
+body.dark #habilidades {
+    color: white;
+}
+
+body.dark .rodape{
+    background-color: #1E1E1E;
+}
+
+/*==========================
+TEMA ESCURO
+==========================*/
+
+/*=========================
+RESPONSIVIDADE MOBILE
+*/
+
+/*=========================
+FIM RESPONSIVIDADE MOBILE
+*/
+
+/*=========================
+RESPONSIVIDADE TABLET
+*/
+
+/*=========================
+FIM RESPONSIVIDADE TABLET
+*/

@@ -1,16 +1,19 @@
-fetch("api.github.com/users/Vitonsodev")
+fetch("https://api.github.com/users/Vitonsodev")
 
-
-console.log(fetch)
-
+let menu = document.getElementById("menuNavegacao")
 let trilho = document.getElementById("trilho");
-let modoClaro = document.getElementById("modoClaro")
 let body = document.querySelector("body")
+let iconeTema = document.getElementById("iconeTema")
 
 trilho.addEventListener("click", () => {
-    trilho.classList.toggle("dark");
     body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")){
+        iconeTema.src = "img/lua.png";
+    } else {
+        iconeTema.src = "img/sol.png";
+    }
 });
+
 
 
 
