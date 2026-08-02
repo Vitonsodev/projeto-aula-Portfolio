@@ -1,9 +1,3 @@
-fetch('https://api.github.com/users/${usuario}')
-    .then(resposta => resposta.json())
-    .then(dados=>{
-
-    });
-
 let menu = document.getElementById("menuNavegacao") //=====================================//
 let trilho = document.getElementById("trilho");      // Variáveis para tema claro e escuro//
 let body = document.querySelector("body")
@@ -19,14 +13,42 @@ trilho.addEventListener("click", () => {
 });
 
 const inputUsuario = document.getElementById("nomeUsuario");
-const pefilGithub = document.getElementById("perfilGithub");
+const perfilGithub = document.getElementById("perfilGithub");
 
 function buscarUsuario(){
     const usuario = inputUsuario.value;
+    let nomeProjetos = repositorio.name;
 
-    console.log(usuario)
+    console.log(usuario);
 
-}
+    fetch(`https://api.github.com/users/${usuario}`)
+    .then(resposta => resposta.json())
+    .then(dados=>{
+        console.log(dados);
+        perfilGithub.innerHTML = `
+        <div class="perfil">
+        <h2>${dados.name}</h2>
+        <img src="${dados.avatar_url}" class="foto-perfil"alt="Foto de perfil do usuário">
+        <p>Login: ${dados.login}</p>
+        <p>Bio: ${dados.bio} </p>  
+        <p>Repositórios: ${dados.public_repos}</p>
+        <p>Seguidores: ${dados.followers}</p>
+        </div>`;
+    });
+
+    fetch(`https://api.github.com/users/${usuario}/repos`)
+    .then(resposta => resposta.json())
+    .then(repos =>{
+        console.log(repos);
+        repos.forEach(repositorio => {
+            perfilGithub.innerHTML = `${repositorio.name}`;
+        })
+    
+
+    });
+
+};
+
 
 
 
