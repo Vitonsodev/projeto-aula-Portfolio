@@ -43,10 +43,7 @@ function buscarUsuario(){
         repos.forEach(repositorio => {
             perfilGithub.innerHTML = `${repositorio.name}`;
         })
-    
-
     });
-
 };
 
 

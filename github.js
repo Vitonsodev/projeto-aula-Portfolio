@@ -60,7 +60,6 @@ fetch(`https://api.github.com/users/${usuario}/repos`)
         if (!projetos[repo.name]) {
             return;
         }
-
         const projeto = projetos[repo.name];
 
         const imagem = projeto.imagem;
