@@ -52,7 +52,14 @@ fetch(`https://api.github.com/users/${usuario}/repos`)
 .then(resposta => resposta.json())
 .then(repositorios => {
 
+    console.log(repositorios);
+
     const container = document.getElementById("repositorios");
+
+    if (!Array.isArray(repositorios)) {
+    console.log(repositorios);
+    return;
+}
 
     repositorios.forEach(repo => {
 
